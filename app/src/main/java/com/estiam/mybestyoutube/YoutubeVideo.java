@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity
+@Entity(tableName = "youtube")
 public class YoutubeVideo implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
@@ -27,6 +27,10 @@ public class YoutubeVideo implements Serializable {
         this.url = url;
         this.categorie = categorie;
         this.favori = favori;
+    }
+
+    public YoutubeVideo() {
+
     }
 
     public long getId() {

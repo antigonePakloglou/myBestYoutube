@@ -11,19 +11,19 @@ import java.util.List;
 @Dao
 public interface YoutubeVideoDAO {
 
-    @Query("SELECT * FROM youtubeVideo WHERE id= :id")
+    @Query("SELECT * FROM youtube WHERE id= :id")
     public YoutubeVideo find(Long id);
 
-    @Query("SELECT * FROM youtubeVideo")
+    @Query("SELECT * FROM youtube")
     public List<YoutubeVideo> list();
 
     @Insert
-    public void add(YoutubeVideo... todos);
+    public void add(YoutubeVideo... youtubeVideos);
 
     @Update
-    public void update(YoutubeVideo... todos);
+    public void update(YoutubeVideo... youtubeVideos);
 
     @Delete
-    public void delete(YoutubeVideo... todos);
+    public void delete(YoutubeVideo... youtubeVideos);
 
 }

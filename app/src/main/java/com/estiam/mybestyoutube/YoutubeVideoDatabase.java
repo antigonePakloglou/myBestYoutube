@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 @Database(entities = {YoutubeVideo.class}, version = 1)
 public abstract class YoutubeVideoDatabase extends RoomDatabase {
-    private static final String DATABASE_NAME = "youtubeVideo";
+    private static final String DATABASE_NAME = "youtube";
 
     public static YoutubeVideoDatabase getDb(Context context){
         return Room.databaseBuilder(context, YoutubeVideoDatabase.class, DATABASE_NAME).allowMainThreadQueries().build();

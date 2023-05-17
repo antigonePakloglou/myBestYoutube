@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private List<YoutubeVideo> mesYoutubeVideos;
     private MyYoutubeVideoAdapter monAdapteur;
+    private final String TAG = "YoutubeVideo";
+    public static final String KEY_VIDEO = "video";
 
 
     @Override
@@ -27,15 +27,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
-        mesYoutubeVideos = new ArrayList<>();
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+    }
 
-        mesYoutubeVideos.add(new YoutubeVideo("Première vidéo", "Ceci est la vidéo numéro 1","monurl", "Divertissement",1));
-        mesYoutubeVideos.add(new YoutubeVideo("Deuxiéme vidéo", "Ceci est la vidéo numéro 2","monurl2", "Bonne question",1));
-        mesYoutubeVideos.add(new YoutubeVideo("Troisième vidéo", "Ceci est la vidéo numéro 3","monurl3", "Bonne question",1));
+
+    @Override
+    protected void onStart() {
+        //Récupération de la liste des youtubeVideos en BDD
+        super.onStart();
+        //récupération données de la BDD
+        mesYoutubeVideos = YoutubeVideoDatabase.getDb(getApplicationContext()).youtubeVideoDAO().list();
 
         monAdapteur = new MyYoutubeVideoAdapter(mesYoutubeVideos);
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         mRecyclerView.setAdapter(monAdapteur);
     }
 
