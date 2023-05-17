@@ -26,17 +26,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
+        mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
         mesYoutubeVideos = new ArrayList<>();
 
         mesYoutubeVideos.add(new YoutubeVideo("Première vidéo", "Ceci est la vidéo numéro 1","monurl", "Divertissement",1));
         mesYoutubeVideos.add(new YoutubeVideo("Deuxiéme vidéo", "Ceci est la vidéo numéro 2","monurl2", "Bonne question",1));
         mesYoutubeVideos.add(new YoutubeVideo("Troisième vidéo", "Ceci est la vidéo numéro 3","monurl3", "Bonne question",1));
 
-       // monAdapteur = new MyYoutubeVideoAdapter(mesYoutubeVideos);
+        monAdapteur = new MyYoutubeVideoAdapter(mesYoutubeVideos);
 
-       // mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-       // mRecyclerView.setAdapter(monAdapteur);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        mRecyclerView.setAdapter(monAdapteur);
     }
 
     @Override
