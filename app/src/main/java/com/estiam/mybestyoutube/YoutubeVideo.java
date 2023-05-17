@@ -21,12 +21,12 @@ public class YoutubeVideo implements Serializable {
     @ColumnInfo(name = "favori")
     private long favori;
 
-    public YoutubeVideo(String titre, String description, String url, String categorie, long favori) {
+    public YoutubeVideo(String titre, String description, String url, String categorie) {
         this.titre = titre;
         this.description = description;
         this.url = url;
         this.categorie = categorie;
-        this.favori = favori;
+        this.favori = 0;
     }
 
     public YoutubeVideo() {
