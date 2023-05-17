@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+  <TextView
+      android:id="@+id/detailTitre"
+      android:text="Mon titre"
+      android:layout_width="wrap_content"
+      android:textStyle="bold"
+      android:layout_height="wrap_content"/>
+
+  <TextView
+      android:id="@+id/detailDescription"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/detailTitre"
+      android:text="Ma description"/>
+
+  <TextView
+      android:id="@+id/detailUrl"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/detailDescription"
+      android:text="Mon url"/>
+
+  <TextView
+      android:id="@+id/detailCategorie"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/detailUrl"
+      android:text="Ma catégorie"/>
+
+  <Button
+      android:id="@+id/btnVoir"
+      android:text="VOIR"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/detailCategorie"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+     />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
