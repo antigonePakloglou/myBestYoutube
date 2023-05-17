@@ -21,7 +21,6 @@ public class UpdateYoutubeActivity extends AppCompatActivity {
     private EditText updateDescription;
     private EditText updateUrl;
     private Spinner updateSpinnerCategorie;
-
     private Button btnModifier;
     private Button btnCancel;
 
