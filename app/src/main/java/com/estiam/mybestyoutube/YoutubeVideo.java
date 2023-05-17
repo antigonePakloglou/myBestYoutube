@@ -1,20 +1,31 @@
 package com.estiam.mybestyoutube;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity
 public class YoutubeVideo implements Serializable {
+    @PrimaryKey(autoGenerate = true)
     private long id;
+    @ColumnInfo(name = "titre")
     private String titre;
-    private String decscription;
+    @ColumnInfo(name = "description")
+    private String description;
+    @ColumnInfo(name = "url")
     private String url;
-    private String categroie;
+    @ColumnInfo(name = "categorie")
+    private String categorie;
+    @ColumnInfo(name = "favori")
     private long favori;
 
-    public YoutubeVideo(String titre, String decscription, String url, String categroie, long favori) {
+    public YoutubeVideo(String titre, String description, String url, String categorie, long favori) {
         this.titre = titre;
-        this.decscription = decscription;
+        this.description = description;
         this.url = url;
-        this.categroie = categroie;
+        this.categorie = categorie;
         this.favori = favori;
     }
 
@@ -34,12 +45,12 @@ public class YoutubeVideo implements Serializable {
         this.titre = titre;
     }
 
-    public String getDecscription() {
-        return decscription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDecscription(String decscription) {
-        this.decscription = decscription;
+    public void setDescription(String decscription) {
+        this.description = decscription;
     }
 
     public String getUrl() {
@@ -50,12 +61,12 @@ public class YoutubeVideo implements Serializable {
         this.url = url;
     }
 
-    public String getCategroie() {
-        return categroie;
+    public String getCategorie() {
+        return categorie;
     }
 
-    public void setCategroie(String categroie) {
-        this.categroie = categroie;
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
     public long getFavori() {

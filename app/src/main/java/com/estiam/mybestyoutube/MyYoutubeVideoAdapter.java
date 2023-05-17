@@ -48,7 +48,7 @@ public class MyYoutubeVideoAdapter extends RecyclerView.Adapter<MyYoutubeVideoAd
         }
         void display(YoutubeVideo youtubeVideo){
             nTitreTV.setText(youtubeVideo.getTitre());
-            nDescriptionTV.setText(youtubeVideo.getDecscription()+"€");
+            nDescriptionTV.setText(youtubeVideo.getDescription()+"€");
         }
     }
 

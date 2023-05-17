@@ -6,4 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".AddYoutubeActivity">
 
+    <EditText
+        android:id="@+id/editTitre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saisir un titre"
+        />
+
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saisir une description"
+        app:layout_constraintTop_toBottomOf="@+id/editTitre"
+        />
+
+    <EditText
+        android:id="@+id/editUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saisir une url"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription"
+        />
+
+    <Button
+        android:id="@+id/btnAjouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AJOUTER"
+        app:layout_constraintTop_toBottomOf="@+id/editUrl"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/btnAnnuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANNNULER"
+        app:layout_constraintTop_toBottomOf="@+id/editUrl"
+        app:layout_constraintEnd_toEndOf="@+id/editUrl"
+        android:layout_marginTop="20dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
