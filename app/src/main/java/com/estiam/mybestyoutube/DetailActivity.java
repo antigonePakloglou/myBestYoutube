@@ -1,11 +1,14 @@
 package com.estiam.mybestyoutube;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -60,5 +63,29 @@ public class DetailActivity extends AppCompatActivity {
         detailDescription.setText(youtubeVideo.getDescription());
         detailUrl.setText(youtubeVideo.getUrl());
         detailCategorie.setText(youtubeVideo.getCategorie());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // cration du menu
+        getMenuInflater().inflate(R.menu.menu_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.updateVideo) {
+            // crée un Intent
+            Intent intent = new Intent(getApplicationContext(), UpdateYoutubeActivity.class);
+            intent.putExtra("idVideoYoutube",Long.toString(youtubeVideo.getId()));
+            // démarre l'activity
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.deleteVideo) {
+            YoutubeVideoDatabase.getDb(getApplicationContext()).youtubeVideoDAO().delete(youtubeVideo);
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

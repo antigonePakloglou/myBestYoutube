@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateYoutubeActivity">
+
+
+    <EditText
+        android:id="@+id/updateTitre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saisir un titre"
+        />
+
+    <EditText
+        android:id="@+id/updateDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saisir une description"
+        app:layout_constraintTop_toBottomOf="@+id/updateTitre"
+        />
+
+    <EditText
+        android:id="@+id/updateUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Saisir une url"
+        app:layout_constraintTop_toBottomOf="@+id/updateDescription"
+        />
+
+    <Spinner
+        android:id="@+id/updateSpinnerCategorie"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/updateUrl"
+        app:layout_constraintTop_toBottomOf="@+id/updateUrl"
+        android:layout_marginTop="10dp"
+        android:background="@color/green"
+        />
+    <Button
+        android:id="@+id/btnModifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MODIFIER"
+        app:layout_constraintTop_toBottomOf="@+id/updateSpinnerCategorie"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:id="@+id/btnUpdateAnnuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANNNULER"
+        app:layout_constraintTop_toBottomOf="@+id/updateSpinnerCategorie"
+        app:layout_constraintEnd_toEndOf="@+id/updateSpinnerCategorie"
+        android:layout_marginTop="20dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
